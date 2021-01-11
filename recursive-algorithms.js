@@ -47,3 +47,32 @@ const triNum = function (nth) {
   return nth + triNum(nth - 1);
 };
 console.log(triNum(5));
+
+// String Splitter
+const splitSplitter = function (string, strArr = []) {
+  if (string.indexOf("/") === -1) {
+    strArr.push(string);
+    return strArr;
+  } else {
+    strArr.push(string.substring(0, string.indexOf("/")));
+    return splitSplitter(string.substring(string.indexOf("/") + 1), strArr);
+  }
+};
+
+console.log(splitSplitter("02/20/2020"));
+
+// Fibonacci
+function fibonacci(num) {
+  if (num === 1) {
+    return [1];
+  }
+  if (num === 2) {
+    return [1, 1];
+  }
+
+  arr = fibonacci(num - 1);
+  arr.push(arr[num - 2] + arr[num - 3]);
+
+  return arr;
+}
+console.log(fibonacci(7));
