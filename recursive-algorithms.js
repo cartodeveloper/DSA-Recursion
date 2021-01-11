@@ -76,3 +76,34 @@ function fibonacci(num) {
   return arr;
 }
 console.log(fibonacci(7));
+
+// Factorial
+const factorial = function (num) {
+  if (num === 0) {
+    return 1;
+  }
+  if (num > 0) {
+    return num * factorial(num - 1);
+  }
+};
+console.log(factorial(3));
+
+// Maze Way out
+
+// All ways Maze
+
+// Anagrams
+
+// Organization Chart
+
+const binaryConversion = function (num, binaryNum = "") {
+  if (num === 0) {
+    return binaryNum;
+  }
+  let quotient = Math.floor(num / 2);
+  let modulus = num % 2;
+  binaryNum += modulus;
+  return binaryConversion(quotient) + modulus;
+};
+
+console.log(binaryConversion(17));
